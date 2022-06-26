@@ -1,5 +1,4 @@
 import 'package:cricket/fun/fun_live.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
 
@@ -49,25 +48,23 @@ class _scorecardState extends State<scorecard> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-                height: 40,
                 width: MediaQuery.of(context).size.width,
                 color: Colors.grey[200],
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: SizedBox(
-                          height: 50,
-                          child: Text(
-                            fun_live.data.status,
-                            style: TextStyle(
-                                color: fun_live.status == false
-                                    ? Colors.red
-                                    : Colors.blue,
-                                fontSize: 15),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Expanded(
+                        child: Text(
+                          fun_live.data.status,
+                          style: TextStyle(
+                            color: fun_live.status == false
+                                ? Colors.red
+                                : Colors.blue,
+                            fontSize:
+                                fun_live.data.status.length < 45 ? 15 : 13,
                           ),
                         ),
                       ),
@@ -180,7 +177,11 @@ class _scorecardState extends State<scorecard> {
                                           child: Padding(
                                             padding:
                                                 const EdgeInsets.only(left: 15),
-                                            child: Text('Batter'),
+                                            child: Text(
+                                              'Batter',
+                                              style: TextStyle(
+                                                  color: Colors.grey[800]),
+                                            ),
                                           ),
                                         ),
                                         SizedBox(
@@ -193,7 +194,11 @@ class _scorecardState extends State<scorecard> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.end,
                                               children: [
-                                                Text('R'),
+                                                Text(
+                                                  'R',
+                                                  style: TextStyle(
+                                                      color: Colors.grey[800]),
+                                                ),
                                               ],
                                             )),
                                         SizedBox(
@@ -206,7 +211,11 @@ class _scorecardState extends State<scorecard> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.end,
                                               children: [
-                                                Text('B'),
+                                                Text(
+                                                  'B',
+                                                  style: TextStyle(
+                                                      color: Colors.grey[800]),
+                                                ),
                                               ],
                                             )),
                                         SizedBox(
@@ -219,7 +228,11 @@ class _scorecardState extends State<scorecard> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.end,
                                               children: [
-                                                Text('4s'),
+                                                Text(
+                                                  '4s',
+                                                  style: TextStyle(
+                                                      color: Colors.grey[800]),
+                                                ),
                                               ],
                                             )),
                                         SizedBox(
@@ -232,7 +245,11 @@ class _scorecardState extends State<scorecard> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.end,
                                               children: [
-                                                Text('6s'),
+                                                Text(
+                                                  '6s',
+                                                  style: TextStyle(
+                                                      color: Colors.grey[800]),
+                                                ),
                                               ],
                                             )),
                                         SizedBox(
@@ -245,7 +262,11 @@ class _scorecardState extends State<scorecard> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.end,
                                               children: [
-                                                Text('SR'),
+                                                Text(
+                                                  'SR',
+                                                  style: TextStyle(
+                                                      color: Colors.grey[800]),
+                                                ),
                                               ],
                                             )),
                                       ],
@@ -319,9 +340,13 @@ class _scorecardState extends State<scorecard> {
                                                             MainAxisAlignment
                                                                 .end,
                                                         children: [
-                                                          Text(d
-                                                              .batting[index2].b
-                                                              .toString()),
+                                                          Text(
+                                                            d.batting[index2].b
+                                                                .toString(),
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .grey[800]),
+                                                          ),
                                                         ],
                                                       )),
                                                   SizedBox(
@@ -336,9 +361,14 @@ class _scorecardState extends State<scorecard> {
                                                             MainAxisAlignment
                                                                 .end,
                                                         children: [
-                                                          Text(d.batting[index2]
-                                                              .i4s
-                                                              .toString()),
+                                                          Text(
+                                                            d.batting[index2]
+                                                                .i4s
+                                                                .toString(),
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .grey[800]),
+                                                          ),
                                                         ],
                                                       )),
                                                   SizedBox(
@@ -353,9 +383,14 @@ class _scorecardState extends State<scorecard> {
                                                             MainAxisAlignment
                                                                 .end,
                                                         children: [
-                                                          Text(d.batting[index2]
-                                                              .i6s
-                                                              .toString()),
+                                                          Text(
+                                                            d.batting[index2]
+                                                                .i6s
+                                                                .toString(),
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .grey[800]),
+                                                          ),
                                                         ],
                                                       )),
                                                   SizedBox(
@@ -370,10 +405,14 @@ class _scorecardState extends State<scorecard> {
                                                             MainAxisAlignment
                                                                 .end,
                                                         children: [
-                                                          Text(d.batting[index2]
-                                                              .sr
-                                                              .toStringAsFixed(
-                                                                  1)),
+                                                          Text(
+                                                            d.batting[index2].sr
+                                                                .toStringAsFixed(
+                                                                    1),
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .grey[800]),
+                                                          ),
                                                         ],
                                                       )),
                                                 ],
@@ -381,8 +420,12 @@ class _scorecardState extends State<scorecard> {
                                               Padding(
                                                 padding: const EdgeInsets.only(
                                                     top: 5, left: 10),
-                                                child: Text(d.batting[index2]
-                                                    .dismissalText),
+                                                child: Text(
+                                                  d.batting[index2]
+                                                      .dismissalText,
+                                                  style: TextStyle(
+                                                      color: Colors.grey[800]),
+                                                ),
                                               ),
                                               Divider(
                                                 color: Colors.grey[400],
@@ -477,7 +520,11 @@ class _scorecardState extends State<scorecard> {
                                           child: Padding(
                                             padding:
                                                 const EdgeInsets.only(left: 15),
-                                            child: Text('Bowler'),
+                                            child: Text(
+                                              'Bowler',
+                                              style: TextStyle(
+                                                  color: Colors.grey[800]),
+                                            ),
                                           ),
                                         ),
                                         SizedBox(
@@ -490,7 +537,11 @@ class _scorecardState extends State<scorecard> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.end,
                                               children: [
-                                                Text('O'),
+                                                Text(
+                                                  'O',
+                                                  style: TextStyle(
+                                                      color: Colors.grey[800]),
+                                                ),
                                               ],
                                             )),
                                         SizedBox(
@@ -503,7 +554,11 @@ class _scorecardState extends State<scorecard> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.end,
                                               children: [
-                                                Text('M'),
+                                                Text(
+                                                  'M',
+                                                  style: TextStyle(
+                                                      color: Colors.grey[800]),
+                                                ),
                                               ],
                                             )),
                                         SizedBox(
@@ -516,7 +571,11 @@ class _scorecardState extends State<scorecard> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.end,
                                               children: [
-                                                Text('R'),
+                                                Text(
+                                                  'R',
+                                                  style: TextStyle(
+                                                      color: Colors.grey[800]),
+                                                ),
                                               ],
                                             )),
                                         SizedBox(
@@ -529,7 +588,11 @@ class _scorecardState extends State<scorecard> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.end,
                                               children: [
-                                                Text('w'),
+                                                Text(
+                                                  'w',
+                                                  style: TextStyle(
+                                                      color: Colors.grey[800]),
+                                                ),
                                               ],
                                             )),
                                         SizedBox(
@@ -542,7 +605,11 @@ class _scorecardState extends State<scorecard> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.end,
                                               children: [
-                                                Text('ER'),
+                                                Text(
+                                                  'ER',
+                                                  style: TextStyle(
+                                                      color: Colors.grey[800]),
+                                                ),
                                               ],
                                             )),
                                       ],
@@ -590,8 +657,13 @@ class _scorecardState extends State<scorecard> {
                                                       mainAxisAlignment:
                                                           MainAxisAlignment.end,
                                                       children: [
-                                                        Text(d.bowling[index3].o
-                                                            .toString()),
+                                                        Text(
+                                                          d.bowling[index3].o
+                                                              .toString(),
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .grey[800]),
+                                                        ),
                                                       ],
                                                     )),
                                                 SizedBox(
@@ -605,8 +677,13 @@ class _scorecardState extends State<scorecard> {
                                                       mainAxisAlignment:
                                                           MainAxisAlignment.end,
                                                       children: [
-                                                        Text(d.bowling[index3].m
-                                                            .toString()),
+                                                        Text(
+                                                          d.bowling[index3].m
+                                                              .toString(),
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .grey[800]),
+                                                        ),
                                                       ],
                                                     )),
                                                 SizedBox(
@@ -620,8 +697,13 @@ class _scorecardState extends State<scorecard> {
                                                       mainAxisAlignment:
                                                           MainAxisAlignment.end,
                                                       children: [
-                                                        Text(d.bowling[index3].r
-                                                            .toString()),
+                                                        Text(
+                                                          d.bowling[index3].r
+                                                              .toString(),
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .grey[800]),
+                                                        ),
                                                       ],
                                                     )),
                                                 SizedBox(
@@ -656,10 +738,14 @@ class _scorecardState extends State<scorecard> {
                                                       mainAxisAlignment:
                                                           MainAxisAlignment.end,
                                                       children: [
-                                                        Text(d
-                                                            .bowling[index3].eco
-                                                            .toStringAsFixed(
-                                                                1)),
+                                                        Text(
+                                                          d.bowling[index3].eco
+                                                              .toStringAsFixed(
+                                                                  1),
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .grey[800]),
+                                                        ),
                                                       ],
                                                     )),
                                               ],

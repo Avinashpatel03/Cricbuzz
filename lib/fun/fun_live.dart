@@ -85,18 +85,14 @@ class fun_live {
           if (json_score.fromJson(map).data == null) {
             var res = await http.get(Uri.parse(basestring4 + link));
             map = json.decode(res.body);
-            print('4');
             data = json_score.fromJson(map).data;
           } else {
-            print('3');
             data = json_score.fromJson(map).data;
           }
         } else {
-          print('2');
           data = json_score.fromJson(map).data;
         }
       } else {
-        print('1');
         data = json_score.fromJson(map).data;
       }
     } else {

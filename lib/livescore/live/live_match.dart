@@ -99,16 +99,17 @@ class _live_match_2State extends State<live_match_2> {
             ],
           ),
         ),
-        Container(
-          height: 40,
-          width: MediaQuery.of(context).size.width,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 15, top: 10, right: 15),
-            child: Text(
-              fun_live.data.status,
-              style: TextStyle(
-                color: fun_live.status == false ? Colors.red : Colors.blue,
-                fontSize: fun_live.data.status.length < 45 ? 16 : 13,
+        Padding(
+          padding: const EdgeInsets.only(left: 15, top: 10, right: 15),
+          child: Expanded(
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: Text(
+                fun_live.data.status,
+                style: TextStyle(
+                  color: fun_live.status == false ? Colors.red : Colors.blue,
+                  fontSize: fun_live.data.status.length < 45 ? 15 : 13,
+                ),
               ),
             ),
           ),

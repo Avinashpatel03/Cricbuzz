@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:cricket/fun/fun.dart';
 import 'package:cricket/fun/fun_info.dart';
 import 'package:cricket/fun/fun_live.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../livescore/livescreen.dart';
 
@@ -21,7 +22,10 @@ class _live_matchState extends State<live_match> {
   set() async {
     fun.internet = await fun.checkInternet();
     if (fun.internet == true) {
+      setState(() {});
       await fun.getdata();
+      setState(() {});
+      await fun.getdata_2();
     }
     setState(() {});
   }
@@ -180,15 +184,10 @@ class _live_matchState extends State<live_match> {
                                               children: [
                                                 Row(
                                                   children: [
-                                                    ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              70),
-                                                      child: Image.network(
-                                                        d['teamInfo'][0]['img'],
-                                                        height: 30,
-                                                        fit: BoxFit.fill,
-                                                      ),
+                                                    Image.network(
+                                                      d['teamInfo'][0]['img'],
+                                                      height: 30,
+                                                      fit: BoxFit.fitHeight,
                                                     ),
                                                     SizedBox(
                                                       width: 10,
@@ -344,14 +343,10 @@ class _live_matchState extends State<live_match> {
                                               children: [
                                                 Row(
                                                   children: [
-                                                    ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              70),
-                                                      child: Image.network(
-                                                        d['teamInfo'][1]['img'],
-                                                        height: 30,
-                                                      ),
+                                                    Image.network(
+                                                      d['teamInfo'][1]['img'],
+                                                      height: 30,
+                                                      fit: BoxFit.fill,
                                                     ),
                                                     SizedBox(
                                                       width: 10,
@@ -539,14 +534,7 @@ class _live_matchState extends State<live_match> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      if (fun.checkInternet() == true) {
-                        if (fun.data?.length == null) {
-                          set();
-                        }
-                        setState(() {});
-                      } else {
-                        setState(() {});
-                      }
+                      set();
                     },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white),

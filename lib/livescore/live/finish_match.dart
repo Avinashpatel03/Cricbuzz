@@ -1,5 +1,6 @@
 import 'package:cricket/fun/fun_live.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class finish_match extends StatefulWidget {
   const finish_match({Key? key}) : super(key: key);
@@ -75,7 +76,7 @@ class _finish_matchState extends State<finish_match> {
         ),
         Divider(color: Colors.grey[400],),
         Padding(
-          padding: EdgeInsets.all(8),
+          padding: EdgeInsets.symmetric(horizontal: 8),
           child: Text(
             fun_live.data.status,
             style: TextStyle(fontSize: 15, color: Colors.blue),

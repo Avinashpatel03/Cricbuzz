@@ -44,35 +44,28 @@ class fun {
           'https://api.cricapi.com/v1/currentMatches?apikey=95c00616-5fb8-49ba-b4dc-4a9a830a9872&offset=0'));
       var map = json.decode(res.body);
       data = map['data'];
-      print('1');
       if (data == null) {
         var res = await http.get(Uri.parse(
             'https://api.cricapi.com/v1/currentMatches?apikey=bc403c2e-6cc9-435f-9a88-b527c106b07c&offset=0'));
         var map = json.decode(res.body);
         data = map['data'];
-        print('1');
         if (data == null) {
           var res = await http.get(Uri.parse(
               'https://api.cricapi.com/v1/currentMatches?apikey=1fb77abf-7bce-4039-a199-6a805660e969&offset=0'));
           var map = json.decode(res.body);
           data = map['data'];
-          print('1');
           if (data == null) {
             var res = await http.get(Uri.parse(
                 'https://api.cricapi.com/v1/currentMatches?apikey=f43ff17a-89d5-4d63-8833-c3d7552f1293&offset=0'));
             var map = json.decode(res.body);
             data = map['data'];
-            print('1');
           } else {
-            print('3');
             data = map['data'];
           }
         } else {
-          print('2');
           data = map['data'];
         }
       } else {
-        print('1');
         data = map['data'];
       }
     } else {
@@ -92,7 +85,6 @@ class fun {
     var res = await http.get(Uri.parse(s1));
     var map = json.decode(res.body);
     data2 = map['data'];
-    print('1');
     if (data2 == null) {
       var res = await http.get(Uri.parse(s2));
       var map = json.decode(res.body);
@@ -106,11 +98,9 @@ class fun {
           var map = json.decode(res.body);
           data2 = map['data'];
         } else {
-          print('3');
           data2 = map['data'];
         }
       } else {
-        print('2');
         data2 = map['data'];
       }
     }
